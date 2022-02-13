@@ -6,7 +6,7 @@ Check out [HavoBugun](https://bugunhavo.web.app/)
 
 ### Credits:
 
--   Built with Nextjs & Typescript
+-   Built with Nextjs & Typescript & Material UI
 -   React Query - for server-side state management
 -   Redux Toolkit - for client-side state management
 -   Wallpapers from Unsplash.com
