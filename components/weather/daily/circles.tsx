@@ -54,13 +54,6 @@ export default function Circles({ unit, celsius, item }: Circles) {
                 </Box>
             </Circle>
             <Circle>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                {/* <img
-                    src={"https://cdn-icons-png.flaticon.com/512/578/578135.png"}
-                    alt="precipitation icon"
-                    width="30px"
-                    height="30px"
-                /> */}
                 <HumidityIcon fontSize="medium" />
                 Humidity <br />
                 {item.humidity}%

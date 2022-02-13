@@ -16,7 +16,7 @@ export const IconComponent = ({ weather }: { weather: Weather[] }) => {
     return (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-            src={`http://openweathermap.org/img/wn/${w.icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${w.icon}@2x.png`}
             alt={w.description}
             style={{ filter: "drop-shadow(0 0 1px grey)" }}
         />

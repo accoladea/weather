@@ -5,7 +5,7 @@ export default function Icon({ icon }: { icon: string }) {
     return (
         <Box
             sx={{
-                backgroundImage: `url("http://openweathermap.org/img/wn/${icon}@2x.png")`,
+                backgroundImage: `url("https://openweathermap.org/img/wn/${icon}@2x.png")`,
                 width: "100px",
                 height: "100px",
                 backgroundPosition: "center",

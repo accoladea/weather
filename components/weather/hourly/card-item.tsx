@@ -40,7 +40,7 @@ export default function CardItem({
                     <Box sx={{ height: 45 }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
+                            src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
                             alt={item.weather[0].description}
                             style={{ filter: "drop-shadow(0 0 1px grey)" }}
                         />
