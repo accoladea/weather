@@ -1,22 +1,33 @@
 {
-  "name": "weather",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.0.7",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "17.0.7",
-    "@types/react": "17.0.38",
-    "eslint": "8.6.0",
-    "eslint-config-next": "12.0.7",
-    "typescript": "4.5.4"
-  }
+    "name": "weather",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "export": "next build && next export"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "@mui/icons-material": "^5.2.5",
+        "@mui/material": "^5.2.7",
+        "@reduxjs/toolkit": "^1.7.1",
+        "@types/react-redux": "^7.1.21",
+        "axios": "^0.24.0",
+        "next": "12.0.7",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-query": "^3.34.7",
+        "react-redux": "^7.2.6"
+    },
+    "devDependencies": {
+        "@types/node": "17.0.7",
+        "@types/react": "17.0.38",
+        "eslint": "8.6.0",
+        "eslint-config-next": "12.0.7",
+        "react-json-viewer": "^3.0.1",
+        "typescript": "4.5.4"
+    }
 }
