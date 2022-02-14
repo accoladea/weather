@@ -54,6 +54,7 @@ export default function SevenDay() {
                     sx={{
                         display: "flex",
                         flexDirection: "column",
+                        justifyContent: "center",
                         alignItems: "center",
                         flexGrow: 1,
                     }}
@@ -68,7 +69,16 @@ export default function SevenDay() {
                     <IconComponent weather={daily[0].weather} />
                 </Box>
             </Box>
-            <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>{days}</Box>
+            <Box
+                sx={{
+                    display: "flex",
+                    gap: 1,
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                }}
+            >
+                {days}
+            </Box>
         </Box>
     )
 }

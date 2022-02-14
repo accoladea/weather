@@ -4,13 +4,15 @@ import { memo } from "react"
 
 export default memo(function Footer() {
     return (
-        <Box component="footer">
+        <Box component="footer" sx={{ bgcolor: "custom.background", opacity: 0.5 }}>
             <Typography
                 variant="body1"
                 textAlign="center"
                 py={1}
                 color="background"
-                sx={{ textShadow: "1px 1px 15px white" }}
+                sx={{
+                    textShadow: "1px 1px 15px white",
+                }}
             >
                 Made with{" "}
                 <FavoriteIcon

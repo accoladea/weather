@@ -31,6 +31,7 @@ export default function Navbar({ onNextImage }: { onNextImage: (i: number) => vo
     const isCelsius = useAppSelector((state) => state.location.isCelsius)
     const showImage = useAppSelector((state) => state.image.showImage)
     const [showController, setShowController] = useState(false)
+    const [opacityVal, setOpacityVal] = useState(themeCxt.opacity)
 
     const dispatch = useAppDispatch()
 
@@ -207,35 +208,49 @@ export default function Navbar({ onNextImage }: { onNextImage: (i: number) => vo
                                 </IconButton>
                             </Tooltip>
                         </Box>
-                        <Slider
-                            valueLabelDisplay="auto"
-                            defaultValue={themeCxt.opacity}
-                            min={0}
-                            max={100}
-                            color="secondary"
-                            disabled={!showImage}
-                            components={{
-                                ValueLabel: ({
-                                    children,
-                                    value,
-                                }: {
-                                    children: ReactElement<any, any>
-                                    value: number
-                                }) => (
-                                    <Tooltip
-                                        enterTouchDelay={0}
-                                        placement="bottom"
-                                        title={`Background Transparency ${value}%`}
-                                    >
-                                        {children}
-                                    </Tooltip>
-                                ),
-                            }}
-                            onChangeCommitted={(event: any, value: any) =>
-                                themeCxt.changeOpacity(value)
-                            }
-                            sx={{ mt: 1 }}
-                        />
+                        {showImage && (
+                            <Slider
+                                valueLabelDisplay="auto"
+                                defaultValue={themeCxt.opacity}
+                                value={opacityVal}
+                                min={0}
+                                max={100}
+                                color="secondary"
+                                components={{
+                                    ValueLabel: ({
+                                        children,
+                                        value,
+                                    }: {
+                                        children: ReactElement<any, any>
+                                        value: number
+                                    }) => (
+                                        <Tooltip
+                                            enterTouchDelay={0}
+                                            placement="bottom"
+                                            title={
+                                                <Box>
+                                                    <span>
+                                                        {`Background Transparency ${value}%`}
+                                                    </span>
+                                                    <br />
+                                                    <span>
+                                                        Hint: Decrease to 0% to view the
+                                                        wallpaper
+                                                    </span>
+                                                </Box>
+                                            }
+                                        >
+                                            {children}
+                                        </Tooltip>
+                                    ),
+                                }}
+                                onChangeCommitted={(event: any, value: any) => {
+                                    themeCxt.changeOpacity(value)
+                                    setOpacityVal(value)
+                                }}
+                                sx={{ mt: 1 }}
+                            />
+                        )}
                     </Box>
                 </Box>
             </Toolbar>

@@ -57,7 +57,13 @@ export default function Tab({
             <Box component="span">{`${Math.round(item.temp.min)}°/${Math.round(
                 item.temp.max
             )}°`}</Box>
-            <Box component="span" sx={{ textAlign: "right", flexGrow: 1 }}>
+            <Box
+                component="span"
+                sx={{
+                    textAlign: "right",
+                    flexGrow: 1,
+                }}
+            >
                 {date}
             </Box>
         </Box>

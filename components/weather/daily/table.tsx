@@ -26,48 +26,64 @@ export default function CustomTable({
                     flexGrow: 1,
                     flexShrink: 0,
                 }}
+                size="small"
             >
                 <TableHead>
-                    <TableRow sx={{ display: { sm: "none", border: 0 } }}>
-                        <TableCell sx={{ border: 0 }} colSpan={4}>
+                    <TableRow sx={{ border: 0 }}>
+                        <TableCell
+                            align="center"
+                            sx={{
+                                border: 0,
+                                fontWeight: "bolder",
+                                bgcolor: "text.primary",
+                                color: "background.paper",
+                                p: 0,
+                                py: "2px",
+                            }}
+                            colSpan={4}
+                        >
                             {title}
                         </TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell
-                            sx={{ display: { xs: "none", sm: "table-cell" }, border: 0 }}
-                        />
-                        <TableCell align="right">morning</TableCell>
-                        <TableCell align="right">evening</TableCell>
-                        <TableCell align="right">day</TableCell>
-                        <TableCell align="right" sx={{ overflow: "hidden" }}>
+                            align="center"
+                            sx={{ fontSize: { xs: "0.8rem", md: "1rem" } }}
+                        >
+                            morning
+                        </TableCell>
+                        <TableCell
+                            align="center"
+                            sx={{ fontSize: { xs: "0.8rem", md: "1rem" } }}
+                        >
+                            evening
+                        </TableCell>
+                        <TableCell
+                            align="center"
+                            sx={{ fontSize: { xs: "0.8rem", md: "1rem" } }}
+                        >
+                            day
+                        </TableCell>
+                        <TableCell
+                            align="center"
+                            sx={{ fontSize: { xs: "0.85rem", md: "1rem" } }}
+                        >
                             night
                         </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     <TableRow>
-                        <TableCell
-                            sx={{
-                                display: { xs: "none", sm: "table-cell" },
-                                fontWeight: "bolder",
-                                border: 0,
-                                position: "relative",
-                                top: "-30px",
-                            }}
-                        >
-                            {title}
-                        </TableCell>
-                        <TableCell align="right" sx={{ border: 0 }}>
+                        <TableCell align="center" sx={{ border: 0 }}>
                             {Math.round(morn)}°
                         </TableCell>
-                        <TableCell align="right" sx={{ border: 0 }}>
+                        <TableCell align="center" sx={{ border: 0 }}>
                             {Math.round(eve)}°
                         </TableCell>
-                        <TableCell align="right" sx={{ border: 0 }}>
+                        <TableCell align="center" sx={{ border: 0 }}>
                             {Math.round(day)}°
                         </TableCell>
-                        <TableCell align="right" sx={{ border: 0, overflow: "hidden" }}>
+                        <TableCell align="center" sx={{ border: 0, overflow: "hidden" }}>
                             {Math.round(night)}°
                         </TableCell>
                     </TableRow>

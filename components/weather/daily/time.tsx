@@ -14,7 +14,7 @@ export default function Time({
             sx={{
                 textAlign: "center",
                 bgcolor: "rgba(255,255,255,0.1)",
-                width: "150px",
+                width: { xs: "125px", md: "150px" },
                 borderRadius: 1,
                 py: "2px",
                 boxShadow: 1,

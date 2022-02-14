@@ -15,7 +15,9 @@ export default function Home() {
     const { opacity } = useContext(ThemeContext)
     const location = useAppSelector((state) => state.location.locationObj)
     const retrieved = useRetrieveLocation(!location)
-    // useIpLocator(!location && !retrieved) IP retrieving API has to be changed to support https
+    // useIpLocator(!location && !retrieved) API has to be changed to support https
+    const showImage = useAppSelector((state) => state.image.showImage)
+
     return (
         <>
             <Box
@@ -23,16 +25,16 @@ export default function Home() {
                     maxWidth: "md",
                     mx: "auto",
                     py: 10,
-                    display: opacity === 0 ? "none" : "flex",
                     flexDirection: "column",
-                    gap: 5,
                     "& > *": {
                         bgcolor: "custom.background",
                         p: 2,
                         borderRadius: 1,
                         width: "inherit",
+                        m: 1,
+                        my: 4,
                     },
-                    opacity: "100%",
+                    opacity: showImage ? opacity : "100%",
                 }}
             >
                 <SearchField />

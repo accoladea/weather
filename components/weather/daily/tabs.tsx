@@ -33,8 +33,9 @@ export default function Tabs({ daily, onSelectItem }: TabsProps) {
             sx={{
                 display: "flex",
                 flexDirection: "column",
-                flex: "1 0 355px",
+                flex: "1 0 300px",
                 rowGap: 2,
+                fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
             }}
         >
             <Typography sx={{ color: "text.secondary" }}>

@@ -17,14 +17,14 @@ function Circle({ children }: { children: ReactNode }) {
                 borderRadius: "50%",
                 bgcolor: "rgba(0,0,0,0.8)",
                 color: "white",
-                width: "85px",
-                height: "85px",
+                width: "92px",
+                height: "92px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 flexDirection: "column",
-
                 fontSize: "0.75rem",
+                p: 1,
             }}
         >
             {children}
@@ -41,7 +41,7 @@ export default function Circles({ unit, celsius, item }: Circles) {
                 flexWrap: "wrap",
                 justifyContent: "space-around",
                 textAlign: "center",
-                gap: 1,
+                gap: "2px",
             }}
         >
             <Circle>

@@ -30,7 +30,7 @@ export default function Alerts() {
                         <CloseIcon fontSize="inherit" />
                     </IconButton>
                 }
-                sx={{ borderRadius: 1 }}
+                sx={{ borderRadius: 1, mx: 1 }}
             >
                 <AlertTitle>{alert.event}</AlertTitle>
                 <Typography variant="subtitle2" fontStyle="italic">

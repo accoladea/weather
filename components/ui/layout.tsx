@@ -69,10 +69,10 @@ export default function Layout({ children }: { children: ReactNode }) {
                         showImage && images && images.length > 0
                             ? `url(${images[imageId % images.length]})`
                             : "",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "100%",
+                    width: "100%",
                     height: "auto",
-                    minHeight: "2000px",
+                    minHeight: "100vh",
                 }}
             >
                 <Navbar onNextImage={(i) => setImageId((prev) => prev + i)} />

@@ -29,8 +29,7 @@ export default function DailyWeather() {
                 flexWrap: "wrap",
                 borderRadius: 1,
                 columnGap: 1,
-                rowGap: 4,
-                width: "100%",
+                rowGap: 3,
             }}
         >
             <Tabs
