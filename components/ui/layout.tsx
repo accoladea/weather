@@ -1,11 +1,11 @@
-import { Box, CssBaseline, PaletteMode } from "@mui/material"
-import { ReactNode, useContext, useState } from "react"
+import { Box, CssBaseline, NoSsr, PaletteMode } from "@mui/material"
+import { ReactNode, useContext, useRef, useState } from "react"
 import { createTheme, ThemeProvider } from "@mui/material"
 import { ThemeContext } from "../../store/context/theme-context"
 import { useImages } from "../../store/react-query/wallpaper"
 import { useAppSelector } from "../../store/redux/hooks"
-import Navbar from "./navbar"
 import Footer from "./footer"
+import Header from "./header"
 
 const lightStyles = (showImage: boolean, opacity: number) => {
     return {
@@ -75,8 +75,10 @@ export default function Layout({ children }: { children: ReactNode }) {
                     minHeight: "100vh",
                 }}
             >
-                <Navbar onNextImage={(i) => setImageId((prev) => prev + i)} />
-                <Box component="main">{children}</Box>
+                <Header onNextImage={(i) => setImageId((prev) => prev + i)} />
+                <Box component="main" sx={{ minHeight: "calc(85vh)" }}>
+                    {children}
+                </Box>
                 <Footer />
             </Box>
         </ThemeProvider>

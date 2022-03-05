@@ -352,3 +352,7 @@ export interface GeopluginData {
     geoplugin_currencySymbol_UTF8: string
     geoplugin_currencyConverter: number
 }
+
+export interface INavImageProps {
+    onNextImage: (i: number) => void
+}
