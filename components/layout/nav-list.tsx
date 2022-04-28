@@ -10,13 +10,13 @@ import {
 import { Button, ButtonGroup, IconButton, Slider, Tooltip } from "@mui/material"
 import { Box } from "@mui/system"
 import { ReactElement, useContext, useState } from "react"
-import { useAppDispatch, useAppSelector } from "../../../store/redux/hooks"
-import { ThemeContext } from "../../../store/context/theme-context"
-import imageSlice from "../../../store/redux/imageSlice"
-import locationSlice from "../../../store/redux/locationSlice"
-import { INavImageProps } from "../../../types"
+import { useAppDispatch, useAppSelector } from "../../store/redux/hooks"
+import { ThemeContext } from "../../store/context/theme-context"
+import imageSlice from "../../store/redux/imageSlice"
+import locationSlice from "../../store/redux/locationSlice"
+import { INavImageProps } from "../../types"
 
-export default function NavbarElements({ onNextImage }: INavImageProps) {
+export default function NavList({ onNextImage }: INavImageProps) {
     const isCelsius = useAppSelector((state) => state.location.isCelsius)
     const showImage = useAppSelector((state) => state.image.showImage)
     const [showController, setShowController] = useState(false)

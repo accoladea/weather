@@ -1,5 +1,5 @@
-import { INavImageProps } from "../../../types"
-import NavbarElements from "./navbar-elements"
+import { INavImageProps } from "../../types"
+import NavList from "../layout/nav-list"
 import * as React from "react"
 import Box from "@mui/material/Box"
 import Drawer from "@mui/material/Drawer"
@@ -9,20 +9,16 @@ import { IconButton } from "@mui/material"
 export default function MobileNavbar({ onNextImage }: INavImageProps) {
     const [showDrawer, setShowDrawer] = React.useState(false)
 
-    const toggleDrawer = (open: boolean) => (event: any) => {
-        if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
-            return
-        }
-
-        setShowDrawer(open)
+    const handleDrawerToggle = () => {
+        setShowDrawer(!showDrawer)
     }
 
     return (
         <div>
-            <IconButton aria-label="menu" onClick={toggleDrawer(true)}>
+            <IconButton aria-label="open drawer" onClick={handleDrawerToggle}>
                 <MenuIcon />
             </IconButton>
-            <Drawer anchor="right" open={showDrawer} onClose={toggleDrawer(false)}>
+            <Drawer anchor="right" open={showDrawer} onClose={handleDrawerToggle}>
                 <Box
                     sx={{
                         p: 1,
@@ -36,11 +32,8 @@ export default function MobileNavbar({ onNextImage }: INavImageProps) {
                         height: "auto",
                         my: "auto",
                     }}
-                    role="presentation"
-                    onClick={toggleDrawer(false)}
-                    onKeyDown={toggleDrawer(false)}
                 >
-                    <NavbarElements onNextImage={onNextImage} />
+                    <NavList onNextImage={onNextImage} />
                 </Box>
             </Drawer>
         </div>

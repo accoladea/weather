@@ -1,4 +1,11 @@
-import { Box, CssBaseline, NoSsr, PaletteMode } from "@mui/material"
+import {
+    Box,
+    CssBaseline,
+    NoSsr,
+    PaletteMode,
+    useMediaQuery,
+    useTheme,
+} from "@mui/material"
 import { ReactNode, useContext, useRef, useState } from "react"
 import { createTheme, ThemeProvider } from "@mui/material"
 import { ThemeContext } from "../../store/context/theme-context"
@@ -59,6 +66,8 @@ export default function Layout({ children }: { children: ReactNode }) {
     const customTheme = createTheme(themeSwitchHandler(darkMode, showImage, opacity))
     const { images } = useImages()
     const [imageId, setImageId] = useState(0)
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.up("md"))
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -75,7 +84,10 @@ export default function Layout({ children }: { children: ReactNode }) {
                     minHeight: "100vh",
                 }}
             >
-                <Header onNextImage={(i) => setImageId((prev) => prev + i)} />
+                <Header
+                    isMobile={isMobile}
+                    onNextImage={(i) => setImageId((prev) => prev + i)}
+                />
                 <Box component="main" sx={{ minHeight: "calc(85vh)" }}>
                     {children}
                 </Box>

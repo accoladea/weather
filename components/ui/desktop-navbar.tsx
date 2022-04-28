@@ -1,6 +1,6 @@
 import { Box } from "@mui/system"
-import { INavImageProps } from "../../../types"
-import NavbarElements from "./navbar-elements"
+import { INavImageProps } from "../../types"
+import NavList from "../layout/nav-list"
 
 export default function DesktopNavbar({ onNextImage }: INavImageProps) {
     return (
@@ -14,7 +14,7 @@ export default function DesktopNavbar({ onNextImage }: INavImageProps) {
                 gap: 2,
             }}
         >
-            <NavbarElements onNextImage={onNextImage} />
+            <NavList onNextImage={onNextImage} />
         </Box>
     )
 }

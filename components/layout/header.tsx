@@ -1,10 +1,15 @@
 import { AppBar, Toolbar, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import Link from "next/Link"
-import NavbarElements from "./navbar/navbar-elements"
-import NavbarSwitch from "./navbar/navbar-switch"
+import Navbar from "./navbar"
 
-export default function Header({ onNextImage }: { onNextImage: (i: number) => void }) {
+export default function Header({
+    onNextImage,
+    isMobile,
+}: {
+    isMobile: boolean
+    onNextImage: (i: number) => void
+}) {
     return (
         <AppBar
             position="static"
@@ -40,7 +45,7 @@ export default function Header({ onNextImage }: { onNextImage: (i: number) => vo
                     </Typography>
                 </Box>
 
-                <NavbarSwitch onNextImage={onNextImage} />
+                <Navbar onNextImage={onNextImage} isMobile={isMobile} />
             </Toolbar>
         </AppBar>
     )
