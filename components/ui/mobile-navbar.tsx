@@ -6,7 +6,10 @@ import Drawer from "@mui/material/Drawer"
 import MenuIcon from "@mui/icons-material/Menu"
 import { IconButton } from "@mui/material"
 
-export default function MobileNavbar({ onNextImage }: INavImageProps) {
+export default function MobileNavbar({
+    onNextImage,
+    isMobile,
+}: INavImageProps & { isMobile?: boolean }) {
     const [showDrawer, setShowDrawer] = React.useState(false)
 
     const handleDrawerToggle = () => {
@@ -27,13 +30,13 @@ export default function MobileNavbar({ onNextImage }: INavImageProps) {
                         flexWrap: "wrap",
                         justifyItems: "center",
                         alignItems: "center",
-                        gap: 2,
+                        gap: 5,
                         width: 250,
                         height: "auto",
                         my: "auto",
                     }}
                 >
-                    <NavList onNextImage={onNextImage} />
+                    <NavList onNextImage={onNextImage} isMobile={isMobile} />
                 </Box>
             </Drawer>
         </div>

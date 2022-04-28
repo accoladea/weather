@@ -1,9 +1,11 @@
 import { Box } from "@mui/material"
+import { useRouter } from "next/router"
 import { Daily } from "../../../types"
 import { getDailyDate } from "../../../utils"
 import { SelectedType } from "./daily"
 
 type TabProps = {
+    isMobile: boolean
     item: Daily
     id: number
     selectedTab: number
@@ -16,11 +18,16 @@ export default function Tab({
     selectedTab,
     onSelectItem,
     onSelectTab,
+    isMobile,
 }: TabProps) {
+    const router = useRouter()
     const date = getDailyDate(item.dt, id)
     function clickTabHandler() {
         onSelectItem({ selected: item, date })
         onSelectTab(id)
+        if (isMobile) {
+            router.replace("#daily-forecast")
+        }
     }
 
     return (

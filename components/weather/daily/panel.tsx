@@ -19,6 +19,7 @@ export default function Panel({
 
     return (
         <Box
+            id="daily-forecast"
             sx={{
                 display: "flex",
                 flexDirection: "column",

@@ -11,6 +11,6 @@ export default function Navbar({
     return isMobile ? (
         <DesktopNavbar onNextImage={onNextImage} />
     ) : (
-        <MobileNavbar onNextImage={onNextImage} />
+        <MobileNavbar onNextImage={onNextImage} isMobile />
     )
 }

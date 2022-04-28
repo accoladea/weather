@@ -1,11 +1,4 @@
-import {
-    Box,
-    CssBaseline,
-    NoSsr,
-    PaletteMode,
-    useMediaQuery,
-    useTheme,
-} from "@mui/material"
+import { Box, CssBaseline, PaletteMode, useMediaQuery, useTheme } from "@mui/material"
 import { ReactNode, useContext, useRef, useState } from "react"
 import { createTheme, ThemeProvider } from "@mui/material"
 import { ThemeContext } from "../../store/context/theme-context"
@@ -60,10 +53,10 @@ const themeSwitchHandler = (darkMode: boolean, showImage: boolean, opacity: numb
 }
 
 export default function Layout({ children }: { children: ReactNode }) {
-    const { opacity } = useContext(ThemeContext)
+    const { opacity, darkMode } = useContext(ThemeContext)
     const showImage = useAppSelector((state) => state.image.showImage)
-    const { darkMode } = useContext(ThemeContext)
     const customTheme = createTheme(themeSwitchHandler(darkMode, showImage, opacity))
+
     const { images } = useImages()
     const [imageId, setImageId] = useState(0)
     const theme = useTheme()

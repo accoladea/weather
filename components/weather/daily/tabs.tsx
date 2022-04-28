@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material"
 import React, { useState } from "react"
 import { useWeather } from "../../../store/react-query/weather"
 import { Daily } from "../../../types"
@@ -12,12 +12,16 @@ type TabsProps = {
 }
 
 export default function Tabs({ daily, onSelectItem }: TabsProps) {
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"))
+
     const [selectedTab, setSelectedTab] = useState(0)
     const timezone: string = useWeather((state) => state.timezone).data
 
     const tabs = daily.map((item, index) => {
         return (
             <Tab
+                isMobile={isMobile}
                 key={index}
                 id={index}
                 item={item}

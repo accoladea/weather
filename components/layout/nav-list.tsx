@@ -16,7 +16,10 @@ import imageSlice from "../../store/redux/imageSlice"
 import locationSlice from "../../store/redux/locationSlice"
 import { INavImageProps } from "../../types"
 
-export default function NavList({ onNextImage }: INavImageProps) {
+export default function NavList({
+    onNextImage,
+    isMobile,
+}: INavImageProps & { isMobile?: boolean }) {
     const isCelsius = useAppSelector((state) => state.location.isCelsius)
     const showImage = useAppSelector((state) => state.image.showImage)
     const [showController, setShowController] = useState(false)
@@ -65,40 +68,42 @@ export default function NavList({ onNextImage }: INavImageProps) {
                     variant={!themeCxt.darkMode ? "contained" : "outlined"}
                     onClick={!themeCxt.darkMode ? undefined : themeCxt.toggleMode}
                 >
-                    <LightMode fontSize="small" />
+                    <LightMode />
                 </Button>
                 <Button
                     variant={themeCxt.darkMode ? "contained" : "outlined"}
                     onClick={themeCxt.darkMode ? undefined : themeCxt.toggleMode}
                 >
-                    <DarkMode fontSize="small" />
+                    <DarkMode />
                 </Button>
             </ButtonGroup>
-            <Box
-                sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    height: "auto",
-                    width: "auto",
-                }}
-            >
-                <IconButton
-                    onClick={() => setShowController((prev) => !prev)}
+            {!isMobile && (
+                <Box
                     sx={{
-                        color: showController ? "background.paper" : "info.main",
-                        bgcolor: showController ? "info.main" : "transparent",
-                        "&:hover": {
-                            bgcolor: showController ? "info.dark" : "",
-                        },
+                        display: "flex",
+                        justifyContent: "center",
+                        height: "auto",
+                        width: "auto",
                     }}
                 >
-                    <Wallpaper />
-                </IconButton>
-            </Box>
+                    <IconButton
+                        onClick={() => setShowController((prev) => !prev)}
+                        sx={{
+                            color: showController ? "background.paper" : "info.main",
+                            bgcolor: showController ? "info.main" : "transparent",
+                            "&:hover": {
+                                bgcolor: showController ? "info.dark" : "",
+                            },
+                        }}
+                    >
+                        <Wallpaper />
+                    </IconButton>
+                </Box>
+            )}
             <Box
                 sx={{
                     // position: "fixed",
-                    display: showController ? "flex" : "none",
+                    display: showController || !!isMobile ? "flex" : "none",
                     flexDirection: "column",
                     // top: 55,
                     // right: "10vw",

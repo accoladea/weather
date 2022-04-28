@@ -1,4 +1,4 @@
-import { Box, Divider } from "@mui/material"
+import { Box } from "@mui/material"
 import { useAppSelector } from "../../../store/redux/hooks"
 
 import Tabs from "./tabs"

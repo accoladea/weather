@@ -24,7 +24,7 @@ export default function Home() {
                 sx={{
                     maxWidth: "md",
                     mx: "auto",
-                    py: 10,
+                    py: { xs: 4, md: 10 },
                     flexDirection: "column",
                     "& > *": {
                         bgcolor: "custom.background",
